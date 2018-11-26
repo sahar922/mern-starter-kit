@@ -4,8 +4,8 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Layout } from "antd";
-import { Provider } from "react-redux";
-import store from "./store";
+import {Provider, observer} from 'mobx-react';
+import appStore from "./AppStore";
 import RouteWithLayout from "./common/route-with-layout";
 import PrivateRoute from "./common/private-route";
 import BasicLayout from "./components/layout/basic-layout";
@@ -25,13 +25,13 @@ if (localStorage.jwtToken) {
   // Decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
   // Set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded));
+  appStore.dispatch(setCurrentUser(decoded));
 
   // Check for expired token
   const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
     // Logout user
-    store.dispatch(logoutUser());
+    appStore.dispatch(logoutUser());
     // Redirect to login
     window.location.href = "/login";
   }
@@ -40,7 +40,7 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={appStore}>
         <Router>
           <Layout className="app">
             <Switch>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Dropdown, Avatar, Menu, Icon, Badge } from "antd";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
 
 import styles from "./Header.module.css";
@@ -53,11 +52,4 @@ NavBar.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(
-  mapStateToProps,
-  { logoutUser }
-)(NavBar);
+export default (NavBar);

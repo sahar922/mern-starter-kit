@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
-import { connect } from "react-redux";
 import { Row, Col, Button } from "antd";
 
 import styles from "./Landing.module.css";
 
 class Landing extends Component {
   componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
-    }
+    // if (this.props.auth.isAuthenticated) {
+    //   this.props.history.push("/dashboard");
+    // }
   }
 
   render() {
@@ -54,8 +53,4 @@ Landing.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(mapStateToProps)(Landing);
+export default (Landing);

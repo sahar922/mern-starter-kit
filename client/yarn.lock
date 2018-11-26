@@ -6449,7 +6449,7 @@ mini-css-extract-plugin@0.4.3:
 
 mini-store@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mini-store/-/mini-store-2.0.0.tgz#0843c048d6942ce55e3e78b1b67fc063022b5488"
+  resolved "https://registry.yarnpkg.com/mini-appStore/-/mini-appStore-2.0.0.tgz#0843c048d6942ce55e3e78b1b67fc063022b5488"
   dependencies:
     hoist-non-react-statics "^2.3.1"
     prop-types "^15.6.0"
@@ -8555,7 +8555,7 @@ rc-menu@^7.3.0, rc-menu@~7.4.12:
     babel-runtime "6.x"
     classnames "2.x"
     dom-scroll-into-view "1.x"
-    mini-store "^2.0.0"
+    mini-appStore "^2.0.0"
     mutationobserver-shim "^0.3.2"
     prop-types "^15.5.6"
     rc-animate "2.x"
@@ -8650,7 +8650,7 @@ rc-table@~6.3.4:
     classnames "^2.2.5"
     component-classes "^1.2.6"
     lodash "^4.17.5"
-    mini-store "^2.0.0"
+    mini-appStore "^2.0.0"
     prop-types "^15.5.8"
     rc-util "^4.0.4"
     react-lifecycles-compat "^3.0.2"

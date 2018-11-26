@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Menu, Icon } from "antd";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
 
 import styles from "./Sider.module.css";
@@ -79,7 +78,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { logoutUser }
-)(SideBar);
+export default (SideBar);

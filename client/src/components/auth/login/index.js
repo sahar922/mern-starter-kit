@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "antd";
 import TextFieldGroup from "../../../common/text-field-group";
-import { connect } from "react-redux";
 import { loginUser } from "../../../actions/authActions";
 
 class Login extends Component {
@@ -17,9 +16,9 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
-    }
+    // if (this.props.auth.isAuthenticated) {
+    //   this.props.history.push("/dashboard");
+    // }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -104,14 +103,6 @@ Login.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-  auth: state.auth,
-  errors: state.errors
-});
-
 const WrappedLogin = Form.create()(Login);
 
-export default connect(
-  mapStateToProps,
-  { loginUser }
-)(WrappedLogin);
+export default (WrappedLogin);

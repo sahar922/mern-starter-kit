@@ -12,5 +12,13 @@ module.exports = function override(config, env) {
     modifyVars: { "@primary-color": "#17a2b8" },
     javascriptEnabled: true
   })(config, env);
+
+    config = injectBabelPlugin( [
+        "@babel/plugin-proposal-decorators",
+        {
+            "legacy": true
+        }
+    ],config);
+
   return config;
 };
